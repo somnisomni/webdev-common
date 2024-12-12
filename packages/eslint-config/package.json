@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "main": "index.mjs",
   "module": "index.mjs",
+  "typings": "index.d.ts",
   "type": "module",
   "author": "me@somni.one",
   "license": "MIT",

@@ -2,10 +2,8 @@ import js from "./configs/js";
 import ts from "./configs/ts";
 import vueTs from "./configs/vue-ts";
 
-const configs = {
+export {
   js,
   ts,
   vueTs,
 };
-
-export default configs;
