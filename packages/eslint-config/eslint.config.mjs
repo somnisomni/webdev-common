@@ -1,11 +1,11 @@
 import js from "./configs/js.mjs";
 
 /** @type {import("eslint").Linter.Config[]} */
-const configs = [
+export default [
   ...js,
   {
-    "import/extensions": "off",
-  }
+    rules: {
+      "import-x/extensions": [ "error", "always" ],
+    },
+  },
 ];
-
-export default configs;

@@ -2,6 +2,6 @@ import type { Linter } from "eslint";
 
 declare module "@somni/eslint-config" {
   export const js: Linter.Config[];
-  export const ts: Linter.Config[];
-  export const vueTs: Linter.Config[];
+  export function generateTsLintConfig(tsconfigRootDir: string): Linter.Config[];
+  export function generateVueTsLintConfig(tsconfigRootDir: string): Linter.Config[];
 }
