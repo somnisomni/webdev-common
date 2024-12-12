@@ -1,25 +1,33 @@
 {
   "name": "@somni/eslint-config",
   "version": "0.0.0",
-  "main": "index.mjs",
-  "module": "index.mjs",
-  "typings": "index.d.ts",
   "type": "module",
+  "exports": {
+    "default": "./index.mjs",
+    "types": "./index.d.ts"
+  },
   "author": "me@somni.one",
   "license": "MIT",
+  "repository": {
+    "directory": "packages/eslint-config",
+    "type": "git",
+    "url": "git+https://github.com/somnisomni/webdev-common.git"
+  },
   "packageManager": "pnpm@9.15.0",
   "scripts": {
     "lint": "eslint --debug ."
   },
-  "devDependencies": {
+  "dependencies": {
     "@eslint/js": "^9.16.0",
     "@shopify/eslint-plugin": "^46.0.0",
     "@stylistic/eslint-plugin": "^2.12.1",
-    "eslint": "^9.16.0",
     "eslint-plugin-import-x": "^4.5.0",
     "eslint-plugin-vue": "^9.32.0",
     "globals": "^15.13.0",
     "typescript-eslint": "^8.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.16.0"
   },
   "peerDependencies": {
     "eslint": ">=9"

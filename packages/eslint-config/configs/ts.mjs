@@ -1,7 +1,7 @@
 import tseslint from "typescript-eslint";
 import importX from "eslint-plugin-import-x";
 import shopify from "@shopify/eslint-plugin";
-import js from "./js";
+import js from "./js.mjs";
 
 /** @type {import("eslint").Linter.Config[]} */
 const configs = tseslint.config(
@@ -9,7 +9,7 @@ const configs = tseslint.config(
   js,
 
   // Base configuration for TypeScript
-  tseslint.configs.recommended,
+  // tseslint.configs.recommended,
 
   // Plugin: shopify
   ...shopify.configs.typescript,
