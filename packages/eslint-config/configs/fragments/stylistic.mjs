@@ -7,6 +7,9 @@ const config = {
     "@stylistic": stylistic,
   },
   rules: {
+    // ESLint - off
+    "new-cap": "off",
+
     // ESLint - errors
     "array-bracket-spacing": [ "error", "always" ],
     "constructor-super": "error",
@@ -39,7 +42,6 @@ const config = {
     "func-style": [ "error", "declaration", { allowArrowFunctions: true } ],
     "curly": [ "error", "all" ],
     "camelcase": [ "error", { properties: "always" } ],
-    "new-cap": "error",
     "valid-typeof": "error",
     "unicode-bom": [ "error", "never" ],
 
