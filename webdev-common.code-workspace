@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "[Root]"
+		},
+		{
+			"path": "packages/eslint-config",
+			"name": "eslint-config"
+		}
+	],
+	"settings": {}
+}
