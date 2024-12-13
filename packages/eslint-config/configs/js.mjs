@@ -18,7 +18,7 @@ const configs = [
 
   // Plugin: stylistic
   //  + Stylistic/Generic rules
-  stylisticRules,
+  ...stylisticRules.configs,
 
   // Configuration for config files
   configfileRules,
