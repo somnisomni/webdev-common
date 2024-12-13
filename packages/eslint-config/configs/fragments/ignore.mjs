@@ -7,12 +7,13 @@ const config = {
     "**/out/**",
     "**/node_modules/**",
     "**/coverage/**",
-    "**/.output/**",
+    "**/(.)?output/**",
     "**/.cache/**",
     "**/.git/**",
     "**/.pnpm/**",
     "**/.yarn/**",
     "**/.nuxt/**",
+    "**/vite.config.(m|c)?(t|j)s.timestamp*",
   ],
 };
 
