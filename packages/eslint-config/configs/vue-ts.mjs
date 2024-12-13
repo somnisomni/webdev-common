@@ -1,11 +1,12 @@
 import vue from "eslint-plugin-vue";
+import globals from "globals";
 import tseslint from "typescript-eslint";
 import vueParser from "vue-eslint-parser";
-import globals from "globals";
-import { generateTsLintConfig } from "./ts.mjs";
+import ts from "./ts.mjs";
 
 /** @type {import("eslint").Linter.Config[]} */
-const appendConfigs = tseslint.config(
+const configs = tseslint.config(
+  ...ts,
   ...vue.configs["flat/recommended"],
   {
     name: "somni - vue + typescript",
@@ -25,15 +26,4 @@ const appendConfigs = tseslint.config(
   },
 );
 
-/**
- * @param {string} tsconfigRootDir
- * @returns {import("eslint").Linter.Config[]}
- */
-function generateVueTsLintConfig(tsconfigRootDir) {
-  return [
-    ...generateTsLintConfig(tsconfigRootDir),
-    ...appendConfigs,
-  ];
-}
-
-export { generateVueTsLintConfig };
+export default configs;

@@ -1,14 +1,18 @@
-import tseslint from "typescript-eslint";
 import importX from "eslint-plugin-import-x";
-import importRules from "./fragments/import.mjs";
-import stylisticRules from "./fragments/stylistic.mjs";
+import tseslint from "typescript-eslint";
+import { JS_FILE_GLOBS, TS_FILE_GLOBS } from "./common/globs.mjs";
 import configfileRules from "./fragments/configfile.mjs";
 import ignoreRules from "./fragments/ignore.mjs";
+import importRules from "./fragments/import.mjs";
+import stylisticRules from "./fragments/stylistic.mjs";
 
 /** @type {import("eslint").Linter.Config[]} */
 const configs = tseslint.config(
   // Base configuration for TypeScript
-  tseslint.configs.strictTypeChecked,
+  {
+    files: TS_FILE_GLOBS,
+    ...tseslint.configs.strict,
+  },
 
   // Plugin: import-x
   importX.flatConfigs.recommended,
@@ -28,27 +32,4 @@ const configs = tseslint.config(
   ignoreRules,
 );
 
-/**
- * @param {string} tsconfigRootDir
- * @returns {import("eslint").Linter.Config[]}
- */
-function generateTsLintConfig(tsconfigRootDir) {
-  return [
-    ...configs,
-    {
-      files: [ "**/*.(m|c)?ts" ],
-      languageOptions: {
-        parserOptions: {
-          projectService: true,
-          tsconfigRootDir,
-        },
-      },
-    },
-    {
-      files: [ "**/*.(m|c)?js" ],
-      ...tseslint.configs.disableTypeChecked,
-    },
-  ];
-}
-
-export { generateTsLintConfig };
+export default configs;

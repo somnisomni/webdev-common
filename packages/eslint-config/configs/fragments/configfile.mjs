@@ -3,7 +3,7 @@ import globals from "globals";
 /** @type {import("eslint").Linter.Config} */
 const config = {
   name: "somni - configfile",
-  files: [ "*.config.(m|c)?(t|j)s" ],
+  files: [ "*.config.(m|c)?(t|j)s", "**/*.config.(m|c)?(t|j)s" ],
   languageOptions: {
     globals: {
       ...globals.node,

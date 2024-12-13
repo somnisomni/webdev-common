@@ -16,6 +16,17 @@ const config = {
       before: false,
       after: true,
     } ],
+    "no-var": "error",
+    "no-useless-rename": "error",
+    "no-useless-concat": "error",
+    "default-case-last": "error",
+    "default-param-last": "error",
+    "dot-notation": "error",
+    "func-style": [ "error", "declaration", { allowArrowFunctions: true } ],
+    "curly": [ "error", "all" ],
+    "camelcase": [ "error", { properties: "always" } ],
+    "yoda": [ "warn", "never", { exceptRange: true } ],
+    "unicode-bom": [ "error", "never" ],
 
     // Stylistic
     "@stylistic/object-curly-spacing": [ "error", "always" ],

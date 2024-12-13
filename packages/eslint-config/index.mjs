@@ -1,9 +1,9 @@
 import js from "./configs/js.mjs";
-import { generateTsLintConfig } from "./configs/ts.mjs";
-import { generateVueTsLintConfig } from "./configs/vue-ts.mjs";
+import ts from "./configs/ts.mjs";
+import vueTs from "./configs/vue-ts.mjs";
 
 export {
   js,
-  generateTsLintConfig,
-  generateVueTsLintConfig,
+  ts,
+  vueTs,
 };

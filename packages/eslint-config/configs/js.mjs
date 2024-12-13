@@ -1,9 +1,9 @@
 import js from "@eslint/js";
 import importX from "eslint-plugin-import-x";
-import importRules from "./fragments/import.mjs";
-import stylisticRules from "./fragments/stylistic.mjs";
 import configfileRules from "./fragments/configfile.mjs";
 import ignoreRules from "./fragments/ignore.mjs";
+import importRules from "./fragments/import.mjs";
+import stylisticRules from "./fragments/stylistic.mjs";
 
 /** @type {import("eslint").Linter.Config[]} */
 const configs = [
