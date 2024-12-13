@@ -1,5 +1,7 @@
+import importX from "eslint-plugin-import-x";
+
 /** @type {import("eslint").Linter.Config} */
-const config = {
+const appendConfig = {
   name: "somni - import-x",
   rules: {
     // Off
@@ -26,9 +28,25 @@ const config = {
     "import-x/no-deprecated": "error",
     "import-x/no-empty-named-blocks": "error",
     "import-x/no-mutable-exports": "error",
+    "import-x/no-extraneous-dependencies": "error",
     "import-x/no-absolute-path": "error",
     "import-x/no-self-import": "error",
   },
 };
 
-export default config;
+/**
+ * @param {boolean} ts
+ * @returns {import("eslint").Linter.Config[]}
+ */
+function generateImportConfig(ts = false) {
+  return [
+    // Plugin
+    importX.flatConfigs.recommended,
+    (ts ? importX.flatConfigs.typescript : { }),
+
+    // Config
+    appendConfig,
+  ];
+}
+
+export { generateImportConfig };

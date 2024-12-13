@@ -1,9 +1,9 @@
-import importX from "eslint-plugin-import-x";
 import tseslint from "typescript-eslint";
-import { JS_FILE_GLOBS, TS_FILE_GLOBS } from "./common/globs.mjs";
+import { TS_FILE_GLOBS } from "./common/globs.mjs";
 import configfileRules from "./fragments/configfile.mjs";
 import ignoreRules from "./fragments/ignore.mjs";
-import importRules from "./fragments/import.mjs";
+import { generateImportConfig } from "./fragments/import.mjs";
+import promiseRules from "./fragments/promise.mjs";
 import stylisticRules from "./fragments/stylistic.mjs";
 
 /** @type {import("eslint").Linter.Config[]} */
@@ -15,11 +15,10 @@ const configs = tseslint.config(
   },
 
   // Plugin: import-x
-  importX.flatConfigs.recommended,
-  importX.flatConfigs.typescript,
+  ...generateImportConfig(true),
 
-  // Import rules
-  importRules,
+  // Plugin: promise
+  ...promiseRules,
 
   // Plugin: stylistic
   //  + Stylistic/Generic rules

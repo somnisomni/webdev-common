@@ -1,8 +1,8 @@
 import js from "@eslint/js";
-import importX from "eslint-plugin-import-x";
 import configfileRules from "./fragments/configfile.mjs";
 import ignoreRules from "./fragments/ignore.mjs";
-import importRules from "./fragments/import.mjs";
+import { generateImportConfig } from "./fragments/import.mjs";
+import promiseRules from "./fragments/promise.mjs";
 import stylisticRules from "./fragments/stylistic.mjs";
 
 /** @type {import("eslint").Linter.Config[]} */
@@ -11,10 +11,10 @@ const configs = [
   js.configs.recommended,
 
   // Plugin: import-x
-  importX.flatConfigs.recommended,
+  ...generateImportConfig(),
 
-  // Import rules
-  importRules,
+  // Plugin: promise
+  ...promiseRules,
 
   // Plugin: stylistic
   //  + Stylistic/Generic rules
