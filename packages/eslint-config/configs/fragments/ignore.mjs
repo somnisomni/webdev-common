@@ -7,13 +7,24 @@ const config = {
     "**/out/**",
     "**/node_modules/**",
     "**/coverage/**",
-    "**/(.)?output/**",
+    "**/output/**",
+    "**/.output/**",
+    "**/temp/**",
+    "**/.temp/**",
     "**/.cache/**",
     "**/.git/**",
     "**/.pnpm/**",
     "**/.yarn/**",
     "**/.nuxt/**",
-    "**/vite.config.(m|c)?(t|j)s.timestamp*",
+
+    // ESLint seems like not correctly parsing conditional(?) pattern,
+    // so we need to ignore all files that contains `vite.config.(m|c)?(t|j)s.timestamp`
+    "**/vite.config.js.timestamp*",
+    "**/vite.config.ts.timestamp*",
+    "**/vite.config.mjs.timestamp*",
+    "**/vite.config.cjs.timestamp*",
+    "**/vite.config.mts.timestamp*",
+    "**/vite.config.cts.timestamp*",
   ],
 };
 
