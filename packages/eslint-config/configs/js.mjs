@@ -10,15 +10,15 @@ const configs = [
   // Base configuration for JavaScript
   js.configs.recommended,
 
+  // Plugin: stylistic
+  //  + Stylistic/Generic rules
+  ...stylisticRules.configs,
+
   // Plugin: import-x
   ...generateImportConfig(),
 
   // Plugin: promise
   ...promiseRules,
-
-  // Plugin: stylistic
-  //  + Stylistic/Generic rules
-  ...stylisticRules.configs,
 
   // Configuration for config files
   configfileRules,

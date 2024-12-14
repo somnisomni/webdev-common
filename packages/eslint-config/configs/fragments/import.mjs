@@ -24,13 +24,16 @@ const appendConfig = {
     "import-x/exports-last": "warn",
     "import-x/first": "error",
     "import-x/newline-after-import": "error",
-    "import-x/no-duplicates": [ "error", { "prefer-inline": true } ],
     "import-x/no-deprecated": "error",
     "import-x/no-empty-named-blocks": "error",
     "import-x/no-mutable-exports": "error",
     "import-x/no-extraneous-dependencies": "error",
     "import-x/no-absolute-path": "error",
     "import-x/no-self-import": "error",
+
+    // no-duplicates
+    "no-duplicate-imports": "off",  // Disable ESLint's rule
+    "import-x/no-duplicates": [ "error", { "prefer-inline": false } ],
   },
 };
 

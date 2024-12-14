@@ -104,6 +104,7 @@ const configs = tseslint.config(
       // Enforce to use camelCase (no hyphenation) for attributes in Vue templates
       // ...because I decided to do that
       "vue/attribute-hyphenation": [ "error", "never" ],
+      "vue/v-on-event-hyphenation": [ "error", "never" ],
     },
   },
 );

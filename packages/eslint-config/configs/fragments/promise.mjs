@@ -9,6 +9,9 @@ const configs = [
   {
     name: "somni - promise",
     rules: {
+      // Warnings
+      "promise/always-return": "warn",
+
       // Errors
       "promise/param-names": "error",
       "promise/prefer-await-to-then": "error",

@@ -67,13 +67,13 @@ const configs = [
     rules: {
       // ESLint - off
       "new-cap": "off",
-      "no-duplicate-imports": "off",  // Use `import-x/no-duplicates` instead
 
       // ESLint - errors
       "constructor-super": "error",
       "no-class-assign": "error",
       "no-const-assign": "error",
       "no-dupe-class-members": "error",
+      "no-duplicate-imports": "error",
       "no-this-before-super": "error",
       "no-useless-computed-key": "error",
       "no-useless-rename": "error",
@@ -115,9 +115,31 @@ const configs = [
 const additionalConfigsForTs = [
   {
     rules: {
+      // TypeScript - off
+      "@typescript-eslint/no-extraneous-class": "off",
+
+      // TypeScript - warnings that are could be intentional
+      // "@typescript-eslint/prefer-nullish-coalescing": "warn",
+      "@typescript-eslint/prefer-for-of": "warn",
+      "@typescript-eslint/no-wrapper-object-types": "warn",
       "@typescript-eslint/array-type": [ "warn", {
         default: "array-simple",
       } ],
+
+      // TypeScript - errors
+      "@typescript-eslint/explicit-function-return-type": [ "error", {
+        allowExpressions: true,
+      } ],
+      // "@typescript-eslint/require-await": "error",
+      "@typescript-eslint/method-signature-style": [ "error", "method" ],
+      "@typescript-eslint/consistent-type-imports": [ "error", {
+        prefer: "type-imports",
+        fixStyle: "separate-type-imports",
+      } ],
+
+      // // no-return-await
+      // "no-return-await": "off",
+      // "@typescript-eslint/return-await": [ "error", "always" ],
 
       // no-useless-constructor
       "no-useless-constructor": "off",

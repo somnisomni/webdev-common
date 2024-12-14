@@ -10,16 +10,16 @@ const configs = tseslint.config(
   // Base configuration for TypeScript
   ...tseslint.configs.strict,
 
+  // Plugin: stylistic
+  //  + Stylistic/Generic rules
+  ...stylisticRules.configs,
+  ...stylisticRules.additionalConfigsForTs,
+
   // Plugin: import-x
   ...generateImportConfig(true),
 
   // Plugin: promise
   ...promiseRules,
-
-  // Plugin: stylistic
-  //  + Stylistic/Generic rules
-  ...stylisticRules.configs,
-  ...stylisticRules.additionalConfigsForTs,
 
   // Configuration for config files
   configfileRules,
